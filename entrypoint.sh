@@ -80,7 +80,7 @@ for user in $MAIL_USERS; do
     IFS=':' read -r _username _password <<< "$user"
     echo $_password | saslpasswd2 -p -c -u $MAIL_DOMAIN $_username
 done
-# chown postfix.sasl /etc/sasldb2
+chown postfix:postfix /etc/sasldb2
 
 ############
 # Enable TLS
